@@ -6,7 +6,9 @@ const formatValue = (input: string | number | boolean) => {
     } else if (typeof input === "number") {
         return input * 10;
     } else if (typeof input === "boolean") {
-        return !input
+        return !input;
+    } else {
+        return undefined;
     }
 };
 
@@ -22,3 +24,6 @@ function formatValue(input: string | number | boolean) {
     if (typeof input === "boolean") return !input;
 }
 */
+
+//? Problem - 2
+
