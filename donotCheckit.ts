@@ -1,5 +1,5 @@
 /*
-//Bug - gpt show me the overload version for problem-1. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-1. This only for myself improvement. 
 function formatValue(input: string): string;
 function formatValue(input: number): number;
 function formatValue(input: boolean): boolean;
@@ -10,7 +10,7 @@ function formatValue(input: string | number | boolean) {
     if (typeof input === "boolean") return !input;
 }
 
-//Bug - gpt show me the overload version for problem-2. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-2. This only for myself improvement. 
 
 //! method - 1 
 function getLength(value: string): number;
@@ -35,7 +35,7 @@ const getLength = <T extends string | any[]>(value: T): number => {
   return value.length;
 };
 
-//Bug - gpt show me the overload version for problem-3. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-3. This only for myself improvement. 
 
 class IPerson {
     name: string;
@@ -50,7 +50,7 @@ class Persons implements IPerson {
     }
 }
 
-//Bug - gpt show me the overload version for problem-4. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-4. This only for myself improvement. 
 
 //! method - 1 
 const filterByRating = (items: Books[]): Books[] => {
@@ -68,7 +68,7 @@ interface HasRating {
 const filterByRating = <T extends HasRating>(items: T[]): T[] =>
   items.filter(item => item.rating >= 4);
 
-//Bug - gpt show me the overload version for problem-4. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-4. This only for myself improvement. 
 
 //! method - 1 => Enterprise-Level Version 
 function filterBy<T extends object, K extends keyof T>(
