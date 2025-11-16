@@ -68,7 +68,7 @@ interface HasRating {
 const filterByRating = <T extends HasRating>(items: T[]): T[] =>
   items.filter(item => item.rating >= 4);
 
-//Bug - gpt show me some solve for problem-4. This only for myself improvement. 
+//Bug - gpt show me some solve for problem-5. This only for myself improvement. 
 
 //! method - 1 => Enterprise-Level Version 
 function filterBy<T extends object, K extends keyof T>(
@@ -81,9 +81,27 @@ function filterBy<T extends object, K extends keyof T>(
 
 const activeUsers = filterBy(users, "isActive", true);
 
-//! method - 2 =>
+//! method - 2 => Programming Style
 const filterActiveUsers = (users: readonly UserInfo[]) =>
   users.filter(({ isActive }) => isActive);
 
+//Bug - gpt show me some solve for problem-6. This only for myself improvement. 
 
+//! method - 1 => Class-Based Version
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+class BookPrinter {
+  constructor(private book: Book) {}
+
+  printDetails(): void {
+    console.log(
+      `Title: ${this.book.title}, Author: ${this.book.author}, Published: ${this.book.publishedYear}, Available: ${this.book.isAvailable ? "Yes" : "No"}`
+    );
+  }
+}
 */
