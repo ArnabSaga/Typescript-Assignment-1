@@ -53,10 +53,25 @@ const filterByRating = (itemList: Books[]): Books[] => {
   });
 };
 
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
+// ? Problem - 5
+
+type UserInfo = {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+function filterActiveUsers(users: UserInfo[]): UserInfo[] {
+  return users.filter((user) => {
+    return user.isActive === true;
+  });
+}
+
+const users = [
+  { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
+  { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
+  { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
 ];
 
-console.log(filterByRating(books));
+console.log(filterActiveUsers(users));
