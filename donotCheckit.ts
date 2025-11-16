@@ -49,4 +49,23 @@ class Persons implements IPerson {
         return `Name: ${this.name}, Age: ${this.age}`;
     }
 }
+
+//Bug - gpt show me the overload version for problem-4. This only for myself improvement. 
+
+//! method - 1 
+const filterByRating = (items: Books[]): Books[] => {
+  return items.reduce((acc, item) => {
+    if (item.rating >= 4) acc.push(item);
+    return acc;
+  }, [] as Books[]);
+};
+
+//! method - 2
+interface HasRating {
+  rating: number;
+}
+
+const filterByRating = <T extends HasRating>(items: T[]): T[] =>
+  items.filter(item => item.rating >= 4);
+
 */
