@@ -28,7 +28,6 @@ function getLength(value: string | any[]): number {
     throw new Error("Invalid input");
 }
 
-export {}; // prevent accidental redeclaration
 
 //! method - 2
 
@@ -36,5 +35,18 @@ const getLength = <T extends string | any[]>(value: T): number => {
   return value.length;
 };
 
-*/
+//Bug - gpt show me the overload version for problem-3. This only for myself improvement. 
 
+class IPerson {
+    name: string;
+    age: number;
+    getDetails(): string;
+}
+
+class Persons implements IPerson {
+    constructor(public name: string, public age: number) {}
+    getDetails(): string {
+        return `Name: ${this.name}, Age: ${this.age}`;
+    }
+}
+*/
