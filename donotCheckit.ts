@@ -68,4 +68,22 @@ interface HasRating {
 const filterByRating = <T extends HasRating>(items: T[]): T[] =>
   items.filter(item => item.rating >= 4);
 
+//Bug - gpt show me the overload version for problem-4. This only for myself improvement. 
+
+//! method - 1 => Enterprise-Level Version 
+function filterBy<T extends object, K extends keyof T>(
+  items: ReadonlyArray<T>,
+  key: K,
+  value: T[K]
+): T[] {
+  return items.filter(item => item[key] === value);
+}
+
+const activeUsers = filterBy(users, "isActive", true);
+
+//! method - 2 =>
+const filterActiveUsers = (users: readonly UserInfo[]) =>
+  users.filter(({ isActive }) => isActive);
+
+
 */
