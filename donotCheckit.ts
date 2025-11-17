@@ -104,4 +104,61 @@ class BookPrinter {
     );
   }
 }
+
+//Bug - gpt show me some solve for problem-7. This only for myself improvement. 
+
+//! Method - 1 => set
+const getUniqueValues = <T extends string | number>(arr1: T[], arr2: T[]): T[] => {
+  return [...new Set([...arr1, ...arr2])];
+};
+
+//! Method - 2 => reduce
+const getUniqueValues = <T extends string | number>(arr1: T[], arr2: T[]): T[] => {
+  return [...arr1, ...arr2].reduce<T[]>((acc, value) => {
+    if (!acc.includes(value)) acc.push(value);
+    return acc;
+  }, []);
+};
+
+
+//Bug - gpt show me some solve for problem-8. This only for myself improvement. 
+
+//! Method - 1 => Using a helper function for discount
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+const calculateProductPrice = (p: Product): number => {
+  const base = p.price * p.quantity;
+  return p.discount ? base * (1 - p.discount / 100) : base;
+};
+
+function calculateTotalPrice(products: Product[]): number {
+  return products.reduce((total, p) => total + calculateProductPrice(p), 0);
+}
+
+//! Method - 2 => Using a map
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+
+  const prices = products.map((p) => {
+    const base = p.price * p.quantity;
+    const final = p.discount ? base * (1 - p.discount / 100) : base;
+    return final;
+  });
+
+  return prices.reduce((sum, price) => sum + price, 0);
+}
+
+
 */
